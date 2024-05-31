@@ -1,16 +1,19 @@
 # 2024 서강대학교 K512컵
 
 ### [A K512컵 개최!](https://www.acmicpc.net/problem/31880)
-# Tier B2
-# :수학, 그리디
+Tier B2
+
+:수학, 그리디
 
 ### [B K512에 바이러스 퍼뜨리기](https://www.acmicpc.net/problem/31881)
-# Tier B2
-# :구현, 시뮬레이션
+Tier B2
+
+:구현, 시뮬레이션
 
 ### [C 근수](https://www.acmicpc.net/problem/31882)
-# Tier S4
-# :수학, 문자열
+Tier S4
+
+:수학, 문자열
 
 ### [D FA수의 진](https://www.acmicpc.net/problem/31883)
 
