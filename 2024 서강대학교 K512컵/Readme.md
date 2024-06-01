@@ -16,6 +16,7 @@ S3 그리디
 S2 해시를 사용한 집합과 맵
 
 ### [F Yunny's Trip](https://www.acmicpc.net/problem/31885)
+G3 애드 훅, 해시를 사용한 집합과 맵
 
 ### [G Gridev's Protocol](https://www.acmicpc.net/problem/31886)
 
