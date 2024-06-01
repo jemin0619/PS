@@ -13,6 +13,7 @@ S4 수학, 문자열
 S3 그리디
 
 ### [E Stacking Sticks](https://www.acmicpc.net/problem/31884)
+S2 해시를 사용한 집합과 맵
 
 ### [F Yunny's Trip](https://www.acmicpc.net/problem/31885)
 
