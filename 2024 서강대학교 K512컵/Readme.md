@@ -10,6 +10,7 @@ B2 구현, 시뮬레이션
 S4 수학, 문자열
 
 ### [D FA수의 진](https://www.acmicpc.net/problem/31883)
+S3 그리디
 
 ### [E Stacking Sticks](https://www.acmicpc.net/problem/31884)
 
