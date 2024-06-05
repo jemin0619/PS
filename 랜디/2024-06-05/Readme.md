@@ -2,7 +2,7 @@
 
 ### [B NBA 농구 S3](https://www.acmicpc.net/problem/2852)
 
-### [C sqrt log sin S3](https://www.acmicpc.net/problem/4152)
+### [C sqrt log sin S3](https://www.acmicpc.net/problem/4172)
 
 ### [D 상자넣기 S2](https://www.acmicpc.net/problem/1965)
 
