@@ -14,6 +14,25 @@
 
 ### [H 타일 채우기 3 G4](https://www.acmicpc.net/problem/14852)
 
- </p>
-</p></p>
-</p>학습한 내용 : DP, LIS, 백트래킹, 그리디, 힙에 큰 메모리를 동적으로 할당(new 사용)
+# 학습노트
+
++ 학습한 내용
+  - A : 구현
+  - B : 구현
+  - C : 수학, DP
+  - D : DP(LIS)
+  - E : 구현, 그리디
+  - F : 구현, 자료구조(Set, Map)
+  - G : 백트래킹, DFS
+  - H : DP
+
++ 힙에 동적으로 메모리 할당시키기
+  - [관련자료](https://stackoverflow.com/questions/38842681/segmentation-fault-chkstk-ms-c)
+  - F를 풀면서 위와 같은 문제가 발생했었다.
+  - mycompiler에서는 잘 실행되는데 vscode에서만 그래서 꼭 문제를 해결하고 싶었는데, 아래 방식과 같이 선언하면 해결할 수 있다.
+  - 힙은 스택보다 메모리가 크기에 메모리 면에선 유리하다.
+ 
+```cpp
+vector<ll>* Ypos = new vector<ll>[100003];
+delete[] Ypos;
+```
