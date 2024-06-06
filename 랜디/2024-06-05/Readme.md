@@ -13,3 +13,5 @@
 ### [G 가희의 고구마 먹방 G5](https://www.acmicpc.net/problem/21772)
 
 ### [H 타일 채우기 3 G4](https://www.acmicpc.net/problem/14852)
+
+학습한 내용 : DP, LIS, 백트래킹, 그리디, 힙에 큰 메모리를 동적으로 할당 (new 사용)
