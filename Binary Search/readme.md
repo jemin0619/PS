@@ -371,7 +371,7 @@ int main(){
 - 수학적 통찰력을 이용한 최적화
 
 
-## [BOJ 2512 예](https://www.acmicpc.net/problem/2512)
+## [BOJ 2512 예산](https://www.acmicpc.net/problem/2512)
 <details>
 <summary> 접기/펼치기 </summary>
     
