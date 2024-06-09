@@ -369,3 +369,52 @@ int main(){
 </details>
 
 - 수학적 통찰력을 이용한 최적화
+
+
+## [BOJ 2512 예](https://www.acmicpc.net/problem/2512)
+<details>
+<summary> 접기/펼치기 </summary>
+    
+```cpp
+//Check(x) 지방당 최대예산이 x일때 총 예산이 M을 넘는가?
+//파라미터가 FFTT로 존재하는 결정문제
+//lo를 출력.
+
+#include <bits/stdc++.h>
+using namespace std;
+#define fastio cin.tie(NULL)->sync_with_stdio(false);
+#define ll long long
+
+int N,M;
+vector<int> V;
+
+bool Check(int x){ //지방당 최대예산이 x일때 총 예산이 M을 넘는가?
+    int sum = 0;
+    for(int val : V){
+        sum += min(val, x);
+    }
+    return sum > M;
+}
+
+int main(){
+    fastio;
+    cin>>N;
+    for(int i=0;i<N;i++){
+        int x; cin>>x;
+        V.push_back(x);
+    } cin>>M;
+
+    int lo=-1, hi=*max_element(V.begin(),V.end())+1;
+    while(lo+1<hi){
+        int mid = (lo+hi)/2;
+        if(Check(mid)) hi = mid;
+        else lo = mid;
+    }
+    cout<<lo;
+    return 0;
+}
+```
+</details>
+
+- lo와 hi의 초기값은 파라미터(mid)가 도달할 수 없는 범위이다.
+- mid는 범위를 줄여나가는 것이므로 lo+1, hi-1에까지만 도달할 수 있다.
