@@ -1,6 +1,8 @@
 //dp로 누적합 구하기
 //각 쿼리 O(1)에 처리
 
+//ll로 풀면 출력에서 MOD를 해도 되는데, int로 풀면 매 쿼리마다 MOD를 해야한다.
+
 #include <bits/stdc++.h>
 using namespace std;
 #define fastio cin.tie(NULL)->sync_with_stdio(false);
