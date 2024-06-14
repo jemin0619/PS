@@ -49,3 +49,12 @@ print(chr(ord(n)+1))
 - 문자열 s를 s[a:b]를 사용해 a ~ b-1번째 문자까지 자를 수 있다. (0-indexed)
 - ord() -> 문자를 정수로 변경
 - chr() -> 정수를 문자로 변경
+
+### [Codeup 6036 단어 여러 번 출력하기](https://codeup.kr/problem.php?id=6036)
+```py
+import sys
+n,m = sys.stdin.readline().split()
+m = int(m)
+for k in range(m):
+    print(n,end='')
+```
