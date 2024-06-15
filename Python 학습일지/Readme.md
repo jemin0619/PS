@@ -160,3 +160,22 @@ a = list(map(int,sys.stdin.readline().split()))
 print(min(a))
 ```
 - min 함수의 인자로 list를 넣을 수도 있다
+
+### [Codeup 6095](https://codeup.kr/problem.php?id=6095)
+```py
+'''
+문제에서 x y 입력이 생각했던 것과 반대여서 한 번 틀렸음
+'''
+
+d = [[0]*20 for _ in range(20)]
+n = int(input())
+for i in range(n):
+    y,x = map(int,sys.stdin.readline().split())
+    d[y][x] = 1
+
+for i in range(1,20):
+    for j in range(1,20):
+        print(d[i][j],end=' ')
+    print()
+```
+- 2차원 list에 크기 할당하기
