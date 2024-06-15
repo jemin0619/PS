@@ -63,9 +63,18 @@ for k in range(m):
 ### [Codeup 6040](https://codeup.kr/problem.php?id=6040)
 ```py
 import sys
-n,m = map(int, sys.stdin.readline().split())
-print(n//m)
-print(n%m)
+n,m = map(int, sys.stdin.readline().split()) #10 3
+print(n//m)    # 3
+print(n%m)     # 1
+print(n/m)     # 3.3333333333333335
 ```
-- // 몫 구하기
+- // 나누기 연산 (강제 floor)
 - % 모듈러 연산
+- / 나누기 연산 (floor X)
+
+### [codeup 6041](https://codeup.kr/problem.php?id=6042)
+```py
+n = float(input())
+print(format(n,".2f"))
+```
+
