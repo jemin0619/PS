@@ -138,4 +138,26 @@ for i in a:
 for i in range(1,24):
     print(v[i],end=' ')
 ```
-- list는 vector같은 느낌이라 저렇게 요소를 추가해야만 사용할 수 있는 것 같은데 C 스타일 배열이 있는지 모르겠음
+
+### [Codeup 6093](https://codeup.kr/problem.php?id=6093)
+```py
+import sys
+n = int(input())
+a = list(map(int,sys.stdin.readline().split()))
+
+a.reverse()
+
+for i in a:
+    print(i,end=' ')
+```
+- list에 존재하는 reverse 매서드
+- map 객체를 list로 변경
+
+### [Codeup 6094](https://codeup.kr/problem.php?id=6094)\
+```py
+import sys
+n = int(input())
+a = list(map(int,sys.stdin.readline().split()))
+print(min(a))
+```
+- min 함수의 인자로 list를 넣을 수도 있다
