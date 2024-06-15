@@ -58,3 +58,14 @@ m = int(m)
 for k in range(m):
     print(n,end='')
 ```
+
+
+### [Codeup 6040](https://codeup.kr/problem.php?id=6040)
+```py
+import sys
+n,m = map(int, sys.stdin.readline().split())
+print(n//m)
+print(n%m)
+```
+- // 몫 구하기
+- % 모듈러 연산
