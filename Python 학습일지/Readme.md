@@ -128,16 +128,15 @@ print(lcm(lcm(a,b),c))
 ### [Codeup 6092](https://codeup.kr/problem.php?id=6092)
 ```py
 import sys
+d = [0]*24
 n = int(input())
-a = map(int,sys.stdin.readline().split())
-v = []
-for i in range(24):
-    v.append(0)
-for i in a:
-    v[i] += 1
+l = list(map(int,sys.stdin.readline().split()))
+for i in l:
+    d[i]+=1
 for i in range(1,24):
-    print(v[i],end=' ')
+    print(d[i],end=' ')
 ```
+- 1차원 배열 크기 선언 즉시 할당시키기
 
 ### [Codeup 6093](https://codeup.kr/problem.php?id=6093)
 ```py
