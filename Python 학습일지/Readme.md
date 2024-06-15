@@ -98,3 +98,17 @@ for i in range(1,x+1):
     if(flag): print('X',end=' ')
     else: print(i,end=' ')
 ```
+
+### [Codeup 6083](https://codeup.kr/problem.php?id=6083)
+```py
+import sys
+R,G,B = map(int, sys.stdin.readline().split())
+for r in range(R):
+    for g in range(G):
+        for b in range(B):
+            print(r, g, b)
+print(R*G*B)
+```
+- 빠른 입력은 사용해도 빠른 출력은 굳이 쓰지 않는 것 같음
+
+  
