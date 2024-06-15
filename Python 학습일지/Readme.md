@@ -163,9 +163,9 @@ print(min(a))
 
 ### [Codeup 6095](https://codeup.kr/problem.php?id=6095)
 ```py
-'''
-문제에서 x y 입력이 생각했던 것과 반대여서 한 번 틀렸음
-'''
+
+#문제에서 x y 입력이 생각했던 것과 반대여서 한 번 틀렸음
+
 
 d = [[0]*20 for _ in range(20)]
 n = int(input())
