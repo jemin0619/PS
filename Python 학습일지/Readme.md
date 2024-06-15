@@ -72,9 +72,29 @@ print(n/m)     # 3.3333333333333335
 - % 모듈러 연산
 - / 나누기 연산 (floor X)
 
-### [codeup 6041](https://codeup.kr/problem.php?id=6042)
+### [Codeup 6041](https://codeup.kr/problem.php?id=6042)
 ```py
 n = float(input())
 print(format(n,".2f"))
 ```
 
+### [Codeup 6081](https://codeup.kr/problem.php?id=6081)
+```py
+x = int(input(),16)
+for i in range(1,16):
+    print('%X'%x, '*%X'%i, '=%X'%(x*i),sep='')
+```
+- int형 진수변환
+- 16진수 출력하기
+- 여러 요소 붙여서 출력하기 (sep)
+
+### [Codeup 6082](https://codeup.kr/problem.php?id=6082)
+```py
+x = int(input())
+for i in range(1,x+1):
+    flag = False
+    for S in str(i):
+        if(S=='3' or S=='6' or S=='9'): flag=True;  break
+    if(flag): print('X',end=' ')
+    else: print(i,end=' ')
+```
