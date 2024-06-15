@@ -177,3 +177,32 @@ for i in range(1,20):
     print()
 ```
 - 2차원 list에 크기 할당하기
+
+### [Codeup 6096](https://codeup.kr/problem.php?id=6096)
+```py
+import sys
+board = []
+for _ in range(19):
+    tmp = list(map(int,sys.stdin.readline().split()))
+    board.append(tmp)
+
+t = int(input())
+for _ in range(t):
+    y,x = map(int,sys.stdin.readline().split())
+    y-=1; x-=1
+
+    for i in range(19): 
+        if(board[i][x]==0): board[i][x]=1
+        else: board[i][x]=0
+        
+    for i in range(19):
+        if(board[y][i]==0): board[y][i]=1
+        else: board[y][i]=0
+
+for i in range(19):
+    for j in range(19):
+        print(board[i][j],end=' ')
+    print()
+```
+- 2차원 배열 선언하기
+- 2차원 배열 입력받기
