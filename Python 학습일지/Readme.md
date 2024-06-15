@@ -229,3 +229,30 @@ for i in range(h):
         print(board[i][j],end=' ')
     print()
 ```
+
+### [Codeup 6098](https://codeup.kr/problem.php?id=6098&rid=0)
+```py
+import sys
+board = []
+for _ in range(10):
+    tmp = list(map(int, sys.stdin.readline().split()))
+    board.append(tmp)
+
+curX,curY = 1,1
+fin = False
+while(True):
+    board[curY][curX]=9
+    if(fin): break
+    if(board[curY][curX+1]==0): curX+=1
+    elif(board[curY][curX+1]==2): curX+=1; fin=True
+    elif(board[curY+1][curX]==0): curY+=1
+    elif(board[curY+1][curX]==2): curY+=1; fin=True
+    else: fin=True
+    
+
+for i in range(10):
+    for j in range(10):
+        print(board[i][j],end=' ')
+    print()
+```
+- Codeup 마지막 문제 해결
