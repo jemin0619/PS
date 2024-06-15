@@ -206,3 +206,26 @@ for i in range(19):
 ```
 - 2차원 배열 선언하기
 - 2차원 배열 입력받기
+
+### [Codeup 6097](https://codeup.kr/problem.php?id=6097)
+```py
+import sys
+#y x 입력
+h,w = map(int,sys.stdin.readline().split())
+board = [[0]*w for _ in range(h)]
+n = int(input())
+
+for _ in range(n):
+    l,d,y,x = map(int,sys.stdin.readline().split())
+    y-=1; x-=1
+    if(d==0): #막대를 가로로 놓음
+        for i in range(x,x+l): board[y][i]=1    
+
+    if(d==1): #막대를 세로로 놓음
+        for i in range(y,y+l): board[i][x]=1   
+
+for i in range(h):
+    for j in range(w):
+        print(board[i][j],end=' ')
+    print()
+```
