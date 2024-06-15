@@ -125,4 +125,17 @@ print(lcm(lcm(a,b),c))
 - import math
 - GCD와 LCM
 
-  
+### [Codeup 6092](https://codeup.kr/problem.php?id=6092)
+```py
+import sys
+n = int(input())
+a = map(int,sys.stdin.readline().split())
+v = []
+for i in range(24):
+    v.append(0)
+for i in a:
+    v[i] += 1
+for i in range(1,24):
+    print(v[i],end=' ')
+```
+- list는 vector같은 느낌이라 저렇게 요소를 추가해야만 사용할 수 있는 것 같은데 C 스타일 배열이 있는지 모르겠음
