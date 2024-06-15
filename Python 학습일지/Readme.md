@@ -111,4 +111,18 @@ print(R*G*B)
 ```
 - 빠른 입력은 사용해도 빠른 출력은 굳이 쓰지 않는 것 같음
 
+### [Codeup 6091](https://codeup.kr/problem.php?id=6091)
+```py
+import sys
+import math
+
+def lcm(a,b):
+    return a*b//math.gcd(a,b)
+
+a,b,c = map(int, sys.stdin.readline().split())
+print(lcm(lcm(a,b),c))
+```
+- import math
+- GCD와 LCM
+
   
