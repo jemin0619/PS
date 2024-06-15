@@ -153,7 +153,7 @@ for i in a:
 - list에 존재하는 reverse 매서드
 - map 객체를 list로 변경
 
-### [Codeup 6094](https://codeup.kr/problem.php?id=6094)\
+### [Codeup 6094](https://codeup.kr/problem.php?id=6094)
 ```py
 import sys
 n = int(input())
