@@ -27,6 +27,42 @@
   - H : 그리디
 
 + C 달나라 토끼를 위한 구매대금 지불 도우미
+  <details>
+  <summary> 접기/펼치기 </summary>
+
+  ```cpp
+  #include <bits/stdc++.h>
+  using namespace std;
+  
+  #define fastio cin.tie(NULL) -> sync_with_stdio(false);
+  #define ll long long
+  
+  const ll INF = 0x7f7f7f7f;
+  ll n;
+  ll dp[5][100003]; // i번째 동전까지 고려했을 때 j를 만들어내는 동전의 최소개수
+  ll coin[5] = {0, 1, 2, 5, 7}; // 동전의 값들
+  
+  int main() {
+      fastio;
+      cin>>n;
+    
+      for(int i=0; i<=4; i++)
+          for(int j=0; j<=n; j++)
+              dp[i][j] = INF;
+    
+      dp[0][0] = 0;
+    
+      for (int i=1; i<=4; i++) {
+          for (int j=0; j<=n; j++) {
+              dp[i][j] = dp[i-1][j];
+              if(j-coin[i]>=0) dp[i][j] = min(dp[i][j], dp[i][j-coin[i]]+1);
+          }
+      }
+      cout<<dp[4][n];
+      return 0;
+  }
+  ```
+  </details>
   - sol1) knapsack DP
   - sol2) 1차원 DP
   - 동전이 주어지지 않으면 Knapsack 풀이가 유일하다.
@@ -35,11 +71,71 @@
   - 위 문제를 풀듯이 해결할 수 있다.
 
 + D 3의 제곱
+  <details>
+  <summary> 접기/펼치기 </summary>
+
+  ```py
+  import sys
+
+  while(True):
+      n = int(input())
+      if(n==0): break
+      n -= 1
+      bin = list(format(n, 'b'))
+      bin.reverse()
+      ans = []
+      for i in range(len(bin)):
+          if(bin[i]=='0'): continue
+          ans.append(3**int(i))
+      if(len(ans)==0): print("{ }")
+      else:
+          result = "{ " + ", ".join(map(str,ans)) + " }"
+          print(result)
+  ```
+  </details>
   - 나만모르는웰노운같음
   - 패턴 파악 -> 비트마스킹 떠올리기
   - Python의 Big Integer 활용
 
 + E Left and Right
+  <details>
+  <summary> 접기/펼치기 </summary>
+
+  ```cpp
+  #include <bits/stdc++.h>
+  using namespace std;
+  #define fastio cin.tie(NULL)->sync_with_stdio(false);
+
+  int N,idx;
+  string S;
+  vector<int> ans;
+  stack<pair<char,int>> St;
+  
+  int main(){
+      fastio;
+      cin>>N>>S;
+      S = "R"+S;
+      ans.resize(N+1);
+      for(int i=0;i<N;i++){
+          if(S[i]=='R'){
+              while(!St.empty()){
+                  auto cur = St.top(); St.pop();
+                  ans[cur.second] = ++idx;
+              }
+          }
+          St.push({S[i],i});
+      }
+      while(!St.empty()){
+          auto cur = St.top(); St.pop();
+          ans[cur.second] = ++idx;
+      }
+      for(int i=0;i<N;i++){
+          cout<<ans[i]<<'\n';
+      }
+      return 0;
+  }
+  ```
+  </details>
   - 풀이를 듣고 나면 어렵지 않은데 혼자 떠올리기가 어려워서 해설을 확인함
   - 가상의 시작점 0을 설정하면 모든 동작 앞에 R을 붙여서 생각할 수 있다.
   - 문자열에서 L들의 묶음을 Ls라고 할 때, 문자열을 R와 R+Ls로 나눌 수 있다(R+Ls로 묶을 수 있다면 묶어야 함)
@@ -48,6 +144,58 @@
   - 그렇기에 이 풀이가 성립한다.
  
 + H 사전 순 최대 공통 부분 수열
+  <details>
+  <summary> 접기/펼치기 </summary>
+    
+  ```cpp
+  #include <bits/stdc++.h>
+  #define fastio cin.tie(NULL)->sync_with_stdio(false)
+  using namespace std;
+  
+  vector<int> A, B, ans;
+  int Aidx, Bidx;
+  
+  int main() {
+      fastio;
+      int n, m;
+      cin>>n;
+      for(int i=0;i<n;i++){
+          int x; cin>>x;
+          A.push_back(x);
+      }
+      cin>>m;
+      for(int i=0;i<m;i++){
+          int x; cin>>x;
+          B.push_back(x);
+      }
+
+    while(Aidx<n && Bidx<m){
+        vector<int> Achk(101,-1);
+        vector<int> Bchk(101,-1);
+        for(int i=Aidx;i<n;i++){
+            if(Achk[A[i]]==-1) Achk[A[i]]=i;
+        }
+        for(int i=Bidx;i<m;i++){
+            if(Bchk[B[i]]==-1) Bchk[B[i]]=i;
+        }
+        bool found = false;
+        for(int i=100;i>=1;i--){
+            if(Achk[i]==-1 || Bchk[i]==-1) continue;
+            ans.push_back(i);
+            Aidx = Achk[i]+1;
+            Bidx = Bchk[i]+1;
+            found = true;
+            break;
+        }
+        if(!found) break;
+    }
+
+    cout<<ans.size()<<'\n';
+    for(int val : ans) cout<<val<<' ';
+    return 0;
+  }
+  ```
+  </details>
   - 마찬가지로 풀이를 듣고 나면 어렵지 않은데 생각해내기가 어려웠다.
   - N, M, A[i], B[i] 모두 1 <= x <= 100이라 시간복잡도에 얽매이지 않고 풀이를 작성할 수 있다.
   - 일단 A, B 모두 idx=0에서 시작합니다.
