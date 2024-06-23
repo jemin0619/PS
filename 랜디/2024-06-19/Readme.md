@@ -24,7 +24,7 @@
   - E : 그리디
   - F : 벌집 모양에서의 BFS
   - G : 수학, 유클리드 호제법
-  - H : -
+  - H : DFS
 
 + ## C DNA
   <details>
@@ -251,3 +251,51 @@
     - C-B = (c-b)M
     - 만족하는 모든 M을 구해야 하므로 M은 B-A와 C-B의 최대공약수이다.
     - M을 유클리드 호제법으로 구한 다음 1을 제외한 M의 약수를 출력한다.
+
++ ## H 게임
+  <details>
+  <summary> 접기/펼치기 </summary>
+
+  ```cpp
+  #include <bits/stdc++.h>
+  using namespace std;
+  #define fastio cin.tie(NULL)->sync_with_stdio(false);
+  #define ll long long
+  
+  ll L, R, ans;
+  map<string,bool> vis;
+  map<string,int> dp;
+  
+  string f(string str){
+      ll mul=1, sum=0;
+      for(char c : str){
+          mul *= (c-'0');
+          sum += (c-'0');
+      }
+      string ret = to_string(sum)+to_string(mul);
+      return ret;
+  }
+  
+  int DFS(string str){
+      if(vis[str]) return dp[str];
+      vis[str]=true;
+      string ret = f(str);
+      if(stoll(ret)>100000) return dp[str] = -1;
+      if(ret==str) return dp[str] = 1;
+      return dp[str] = DFS(ret);
+  }
+  
+  int main(){
+      fastio;
+      cin>>L>>R;
+      for(int i=L;i<=R;i++){
+          ans += DFS(to_string(i));
+      }
+      cout<<ans;
+      return 0;
+  }
+  ```
+  </details>
+  
+    - 전형적인 DFS문제.
+    - 10만을 넘기면 -1로 처리한다는 부분을 보지 못해서 틀렸었다.
