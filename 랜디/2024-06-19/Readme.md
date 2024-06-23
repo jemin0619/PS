@@ -202,52 +202,52 @@
 
  
  + ## G 검문
-  <details>
-  <summary> 접기/펼치기 </summary>
-
-  ```cpp
-  #include <bits/stdc++.h>
-  using namespace std;
-  #define fastio cin.tie(NULL) -> sync_with_stdio(false);
+    <details>
+    <summary> 접기/펼치기 </summary>
   
-  int N;
-  vector<int> V;
-  vector<int> ans;
+    ```cpp
+    #include <bits/stdc++.h>
+    using namespace std;
+    #define fastio cin.tie(NULL) -> sync_with_stdio(false);
+    
+    int N;
+    vector<int> V;
+    vector<int> ans;
+    
+    int main(){
+        fastio;
+        cin>>N;
+        for(int i=0;i<N;i++){
+            int x; cin>>x;
+            V.push_back(x);
+        }
+        sort(V.begin(),V.end());
+    
+        int M = V[1]-V[0];
+        
+        for(int i=2;i<N;i++)
+            M = __gcd(M,V[i]-V[i-1]);
+    
+        for(int i=1;i*i<=M;i++){ //M의 모든 약수를 구함
+            if(M%i==0){
+                ans.push_back(i);
+                if(i != M/i) ans.push_back(M/i);
+            }
+        }
+        sort(ans.begin(),ans.end());
+        for(int val : ans){ //M은 1보다 커야 하므로 1을 제외하고 출력한다.
+            if(val==1) continue;
+            cout<<val<<' ';
+        }
+        return 0;
+    }
+    ```
+    </details>
   
-  int main(){
-      fastio;
-      cin>>N;
-      for(int i=0;i<N;i++){
-          int x; cin>>x;
-          V.push_back(x);
-      }
-      sort(V.begin(),V.end());
-  
-      int M = V[1]-V[0];
-      
-      for(int i=2;i<N;i++)
-          M = __gcd(M,V[i]-V[i-1]);
-  
-      for(int i=1;i*i<=M;i++){ //M의 모든 약수를 구함
-          if(M%i==0){
-              ans.push_back(i);
-              if(i != M/i) ans.push_back(M/i);
-          }
-      }
-      sort(ans.begin(),ans.end());
-      for(int val : ans){ //M은 1보다 커야 하므로 1을 제외하고 출력한다.
-          if(val==1) continue;
-          cout<<val<<' ';
-      }
-      return 0;
-  }
-  ```
-  </details>
-  
-  - A = aM + r
-  - B = bM + r
-  - C = cM + r
-  - B-A = (b-a)M
-  - C-B = (c-b)M
-  - 만족하는 모든 M을 구해야 하므로 M은 B-A와 C-B의 최대공약수이다.
-  - M을 유클리드 호제법으로 구한 다음 1을 제외한 M의 약수를 출력한다.
+    - A = aM + r
+    - B = bM + r
+    - C = cM + r
+    - B-A = (b-a)M
+    - C-B = (c-b)M
+    - 만족하는 모든 M을 구해야 하므로 M은 B-A와 C-B의 최대공약수이다.
+    - M을 유클리드 호제법으로 구한 다음 1을 제외한 M의 약수를 출력한다.
