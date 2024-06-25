@@ -1,4 +1,7 @@
 # [BOJ 14939 불 끄기](https://www.acmicpc.net/problem/14939)
+<details>
+<summary> 접기/펼치기 </summary>
+  
 ### 출처
 - 2.3 문제 해결 전략 (37~38)
 
@@ -83,4 +86,5 @@ int main() {
     return 0;
 }
 ```
+</details>
 </details>
