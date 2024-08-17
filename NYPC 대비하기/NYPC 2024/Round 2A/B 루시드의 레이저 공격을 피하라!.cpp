@@ -3,6 +3,11 @@
 //BFS + Union Find로 접근했는데 왜 틀리는지 모르겠음...
 //BIKO에 올라오면 다시 풀어보기
 
+//수정
+//정해는 이분탐색이었다...
+//imos법, 분리집합 이딴거 다 필요없이 두 점 사이에 직선이 존재하는지를 이분탐색으로 판별하면 되는 문제였다.
+//이때 대각선 처리가 조금 까다로운데, 직선만 고려해도 60은 딸 수 있다.
+
 #include <bits/stdc++.h>
 using namespace std;
 #define fastio cin.tie(NULL)->sync_with_stdio(false)
