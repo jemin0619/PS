@@ -1,6 +1,7 @@
 ## Sparse Table (희소배열)
 
-### [추천 글](https://ps.mjstudio.net/sparse-table)
+### [추천 글 1](https://ps.mjstudio.net/sparse-table)
+### [추천 글 2](https://namnamseo.tistory.com/entry/Sparse-Table)
 ### [[Range Query] Sparse Table](https://youtu.be/toBt6dHcvdA?si=viwGMszQd7TzaW9U)
 ### [[Range Query] Disjoint Sparse Table](https://youtu.be/XyKRc71z9Pk?si=X4FyQPBmamqY84M6)
 
