@@ -88,3 +88,66 @@ int main() {
 ```
 </details>
 </details>
+
+## ㅁㅁㅁㅁㅁ
+
+# [BOJ 5015 ls](https://www.acmicpc.net/problem/5015)
+<details>
+<summary> 접기/펼치기 </summary>
+  
+### 출처
+- 8. 동적 계획법 (218~255)
+
+### 아이디어
+- 완전탐색으로 패턴 매칭을 시도한다.
+- 와일드카드 문자를 만나면 몇 번 문자까지 와일드카드 문자로 매칭시킬지 결정한다.
+- 메모이제이션으로 계산했던 값들을 기억해놓는다.
+- 몇 번 문자까지 와일드카드로 매칭시키지 고르는데 O(N)이므로 총 O(N^3)이 된다.
+
+### 해결방법
+- 와일드카드 문자를 만난다면 현재 문자를 대응시킬지, 대응시킬지 말지를 결정한다.
+- 이렇게 하면 몇 번 문자까지 와일드카드로 매칭시킬지 고르지 않아도 되므로 O(N^2)에 동작하는 DP 코드를 짤 수 있다.
+
+### 코드
+<details>
+<summary> 접기/펼치기 </summary>
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+#define fastio cin.tie(NULL)->sync_with_stdio(false)
+
+int N;
+string P, W;
+int dp[103][103];
+
+bool solve(int p, int w){
+    int &ret = dp[p][w];
+    if(ret != -1) return ret;
+
+    if(p<P.size() && w<W.size() && P[p]==W[w]) return ret = solve(p+1, w+1);
+
+    if(p==P.size()) return ret = (w==W.size());
+
+    if(P[p]=='*'){
+        if((p<P.size() && solve(p+1, w) )|| (w<W.size() && solve(p, w+1))){
+            return ret = 1;
+        }
+    }
+
+    return ret = 0;
+}
+
+int main(){
+    fastio;
+    cin>>P>>N;
+    for(int i=0; i<N; i++){
+        cin>>W;
+        memset(dp, -1, sizeof(dp));
+        if(solve(0, 0)) cout<<W<<'\n';
+    }
+    return 0;
+}
+```
+</details>
+</details>
