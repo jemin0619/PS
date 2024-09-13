@@ -1,3 +1,6 @@
+//N이 작아서 백트래킹 풀이가 가능하다.
+//가지치기를 안하면 TLE를 받는다.
+
 #include <bits/stdc++.h>
 using namespace std;
 #define pii pair<int,int>
