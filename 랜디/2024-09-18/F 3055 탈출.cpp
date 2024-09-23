@@ -2,6 +2,8 @@
 //dist 배열을 써서 방문처리 + 큐에 들어가는 값 개수 커팅도 가능하겠지만 굳이 하지 않았다.
 //그냥 겹치는 원소 제거만 해줘도 N,M이 작아서 제한시간 내에 충분히 돌아간다.
 
+//PS를 시작한 초기에 풀던 문제와 비슷한데, 그래서인지 반가웠다.
+
 #include <bits/stdc++.h>
 using namespace std;
 #define fastio cin.tie(NULL)->sync_with_stdio(false)
