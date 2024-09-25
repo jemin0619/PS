@@ -4,6 +4,8 @@
 //pii를 ll ll로 해주지 않으면 WA
 //이유는 CCW에서 T1, T2 계산 중 int 범위를 넘길 수 있기 때문
 
+//CCW가 0인 경우도 pop시키기에 한 선분에 여러 꼭짓점이 들어가지 않는다.
+
 #include <bits/stdc++.h>
 using namespace std;
 #define fastio cin.tie(NULL)->sync_with_stdio(false)
