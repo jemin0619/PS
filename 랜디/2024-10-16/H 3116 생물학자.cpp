@@ -75,8 +75,10 @@ int main(){
 
    for(int i=0; i<N; i++){
       for(int j=i+1; j<N; j++){
-         //if(i==j) continue;
-
+         //if(i==j) continue; 
+         //j의 시작을 0으로 잡아도 되는데, 그렇게 하지 않아도 된다.
+         //겹치는 쌍들은 알고리즘상 결과에 영향을 미치지 않기 때문이다.
+         
          ll T = intersect(V[i], V[j]);
          if(T==-1) continue;
          
