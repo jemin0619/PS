@@ -13,6 +13,8 @@
 //그러므로 (Hm+Atkh-1)/Atkh -1 번의 공격을 Atkm의 공격력으로 시전한다는 것이다.
 //즉 ((Hm+Atkh-1)/Atkh -1)*Atkm이 용사가 받는 데미지라고 할 수 있다.
 
+//24.10.28 지금 보니까 ceil은 걍 올림임.
+
 #include <bits/stdc++.h>
 using namespace std;
 #define fastio cin.tie(NULL)->sync_with_stdio(false);
