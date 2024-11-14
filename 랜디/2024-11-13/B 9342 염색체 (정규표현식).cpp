@@ -1,3 +1,5 @@
+//깡 구현을 시도했으나 구현이 살짝 까다로웠다.
+
 #include <bits/stdc++.h>
 #include <regex>
 using namespace std;
