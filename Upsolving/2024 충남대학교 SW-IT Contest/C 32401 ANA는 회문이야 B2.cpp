@@ -1,3 +1,5 @@
+//구간 내에 특정 문자가 몇 개 있는지 판별하기 위해 누적합을 썼는데, naive하게 구현해도 됩니다
+
 #include <bits/stdc++.h>
 using namespace std;
 #define fastio cin.tie(NULL)->sync_with_stdio(false)
