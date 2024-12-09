@@ -1,4 +1,4 @@
-//아니 이게 된다고??
+//에디토리얼 기반으로 급하게 짜서 좀 더럽습니다...
 
 #include <bits/stdc++.h>
 using namespace std;
