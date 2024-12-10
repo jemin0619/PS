@@ -5,49 +5,38 @@ using namespace std;
 #define fastio cin.tie(NULL)->sync_with_stdio(false)
 
 void solve(){
+    int mxCnt=1, cnt=1;
     int N; cin>>N;
-    map<string, int> P;
-    int mx_cnt=1, cnt=1;
-    vector<string> A(N+1), ans, pre;
+    map<string, int> Mp;
+    vector<string> A(N+1), pre, ans;
     for(int i=1; i<=N; i++) cin>>A[i];
-    
     for(int i=1; i<=N; i++){
-        if(P.find(A[i])==P.end()) {P[A[i]] = i; continue;}
-        int diff = i - P[A[i]];
-        bool check = true;
+        if(Mp.find(A[i])==Mp.end()) {Mp[A[i]]=i; continue;}
+        int diff = i - Mp[A[i]];
         int jump = 0;
+        bool loop = true;
         for(int j=0; j<diff; j++){
-            if(i+j>N) {check=false; break;} //OOB
-            if((i+j)-P[A[i+j]] != diff) {check=false; break;} //루프가 아닌 것이 판별됨
+            if(i+j>N || Mp.find(A[i+j])==Mp.end() || (i+j)-Mp[A[i+j]]!=diff) {loop=false; break;}
+            Mp[A[i+j]] = i+j;
             jump++;
-            P[A[i+j]] = i+j;
         }
-        if(check){
+        if(loop){
             vector<string> tmp(diff);
-            for(int j=0; j<diff; j++) tmp[j] = A[i+j]; //루프 구간 추출
-            if((int)pre.size()>0 && pre==tmp){ //이전 루프와 같은 루프이면
-                cnt++;
-                if(mx_cnt<cnt){
-                    ans = tmp;
-                    mx_cnt = cnt;
-                }
-            }
-            else{ //이전의 루프와 다른 루프이면
-                cnt = 2;
-                if(mx_cnt<cnt){
-                    ans = tmp;
-                    mx_cnt = cnt;
-                }
+            for(int j=0; j<diff; j++) tmp[j] = A[i+j];
+            if(pre.size()>0 && tmp==pre) cnt++;
+            else cnt = 2;
+            if(mxCnt<cnt){
+                mxCnt = cnt;
+                ans = tmp;
             }
             pre = tmp;
         }
         else pre.clear();
-        i += jump-1; //탐색한 부분까지 i를 이동시킴
+        i += jump-1;
     }
-
-    if(mx_cnt==1) {cout<<-1; return;}
-    cout<<(int)ans.size()<<' '<<mx_cnt<<'\n';
-    for(int i=0; i<(int)ans.size(); i++) cout<<ans[i]<<' ';
+    if(mxCnt==1) {cout<<"-1"; return;}
+    cout<<ans.size()<<' '<<mxCnt<<'\n';
+    for(string val : ans) cout<<val<<' ';
 }
 
 int main(){
