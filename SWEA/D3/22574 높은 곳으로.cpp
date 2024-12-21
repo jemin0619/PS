@@ -1,7 +1,6 @@
 //https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AZIieDaq5AEDFAXd
 
 //Tag: 수학, 애드혹
-
 //뭔가 하고 보니까 DP처럼 생겼는데, 시간제한을 보니 DP는 아니었다.
 //그냥 등차수열의 합 써서 쭉 가다가 i번째 원소까지의 합이 P가 된다면 1을 빼주면 된다.
 //1을 빼는 이유는 가장 높은 층에 도달해야 하므로 가장 작은 원소인 1을 빼주는 것이다.
